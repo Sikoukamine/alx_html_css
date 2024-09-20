@@ -1,1 +1,50 @@
+/* 1. Style the body to be a flex container with column direction */
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh; /* Make the body take the full height of the viewport */
+    margin: 0;
+}
 
+/* 2. Style the main container to be a flex container with row direction */
+main {
+    display: flex;
+    flex-direction: row;
+    flex: auto; /* Allow it to adjust size automatically */
+}
+
+/* 3. Assign 2/3 width to the article and 1/3 to the aside */
+article {
+    flex: 2;
+    overflow-y: auto; /* Enable scrolling if content overflows */
+    padding: 10px;
+}
+
+aside {
+    flex: 1;
+    overflow-y: auto; /* Enable scrolling if content overflows */
+    padding: 10px;
+}
+
+/* 4. Style header and footer to ensure they are part of the layout */
+header, footer {
+    background-color: #f8f8f8;
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ccc;
+}
+
+/* Optional: Add styling for visual separation */
+article, aside {
+    border: 1px solid #ccc;
+}
+
+/* Set height to the footer and header */
+header, footer {
+    height: 50px; /* Adjust to your preference */
+}
+
+/* Optional: Add some spacing */
+body {
+    gap: 10px; /* Adds some space between header, main, and footer */
+}
