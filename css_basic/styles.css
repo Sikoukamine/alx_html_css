@@ -1,46 +1,54 @@
-/* 1. Make the body a flex container with column direction */
+/* Flexbox layout styling */
+
+/* Body as a flex container, stacked column layout */
 body {
     display: flex;
     flex-direction: column;
-    height: 100vh; /* Full viewport height */
+    height: 100vh;
     margin: 0;
 }
 
-/* 2. Make main a flex container with row direction */
+/* Main as a flex container with row layout */
 main {
     display: flex;
     flex-direction: row;
-    flex: auto; /* Allow it to adjust size automatically */
-    height: 100%; /* Full height for scrolling */
+    flex: auto;
 }
 
-/* 3. Define the width proportions for article and aside */
+/* Article takes 2/3 of the width */
 article {
-    flex: 2; /* Take 2/3 of the available width */
-    overflow-y: auto; /* Allow scrolling if the content overflows */
+    flex: 2;
+    overflow-y: auto;
     padding: 10px;
+    border: 1px solid #ccc;
 }
 
+/* Aside takes 1/3 of the width */
 aside {
-    flex: 1; /* Take 1/3 of the available width */
-    overflow-y: auto; /* Allow scrolling if the content overflows */
+    flex: 1;
+    overflow-y: auto;
     padding: 10px;
+    border: 1px solid #ccc;
 }
 
-/* 4. Style header and footer */
+/* Header and footer styling */
 header, footer {
     background-color: #f8f8f8;
     padding: 10px;
     text-align: center;
     border: 1px solid #ccc;
+    height: 50px;
 }
 
-/* Optional styling for article and aside */
-article, aside {
-    border: 1px solid #ccc;
-}
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    /* Stack article and aside vertically on smaller screens */
+    main {
+        flex-direction: column;
+    }
 
-/* Set height for header and footer */
-header, footer {
-    height: 50px; /* Adjust as needed */
+    article, aside {
+        flex: auto;
+        width: 100%;
+    }
 }
